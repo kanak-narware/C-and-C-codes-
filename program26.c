@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Function to generate a single random IPv4 address string
 void generate_ip(char *ip_buffer) {
     // Each octet must be between 0 and 255
     int octet1 = rand() % 256;
