@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int daysInMonth;
+    int startDay;
+    int i, dayCount;
+    printf("Enter number of days in the month (28-31): ");
+    scanf("%d", &daysInMonth);
+
+    printf("Enter starting day of the week (0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat): ");
+    scanf("%d", &startDay);
+    if (daysInMonth < 28 || daysInMonth > 31 || startDay < 0 || startDay > 6) {
+        printf("Invalid input! Please check your values.\n");
+        return 1;
+    }
+    printf("\n  Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
+    printf("-------------------------------------\n");
+    for (i = 0; i < startDay; i++) {
+        printf("     ");
+    }
+    dayCount = startDay;
+    for (i = 1; i <= daysInMonth; i++) {
+        printf("%5d", i);
+        dayCount++;
+        if (dayCount > 6) {
+            printf("\n");
+            dayCount = 0; 
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
